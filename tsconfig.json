@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "outDir": "dist/js", //pasta para onde vai o arquivo compilado em JS.
+        "target": "ES6",  //versão do EcmaScript que eu quero que rode.
+        "noEmitOnError": true, // comando para criar um arquio JS só quando não tiver erro no arquivo TypeScript.
+        "noImplicitAny": true //vai fazer com que o compilador não deixe passar atributos com o valor "any", me obrigando a tipar esses atributos.
+    },
+    "include": [
+        "app/**/*" //pasta onde está o arquivo TypeScript 
+    ]
+    
+}
