@@ -1,19 +1,17 @@
 export class Negociacao {
-    constructor(data, quantidade, valor) {
-        this._data = data;
-        this._quantidade = quantidade;
-        this._valor = valor;
+    constructor(_data, //|  Aqui simplificamos o código retirando os atributos e colocando-os dentro construtor e simplificamos mais ainda
+    quantidade, //|  retirando os "getters" de cada um dos atributos porque colocamos o "readonly" assegurando que niguém
+    valor //|  vai modificar os atributos pois estão somente como leitura. 
+    ) {
+        this._data = _data;
+        this.quantidade = quantidade;
+        this.valor = valor;
     }
-    get data() {
-        return this._data;
-    }
-    get quantidade() {
-        return this._quantidade;
-    }
-    get valor() {
-        return this._valor;
+    get Data() {
+        const data = new Date(this._data.getTime()); //Aqui recriamos o "get Data" só que ultimlizamos o getTime() para evitar que alguém consiga modificar a data ultilizando o setDate(x) lá no nosso controller.
+        return data;
     }
     get volume() {
-        return this._quantidade * this._valor;
+        return this.quantidade * this.valor;
     }
 }

@@ -1,7 +1,7 @@
 import { Negociacao } from "./negociacao.js";
 
 export class Negociacoes{
-    private negociacoes: Array<Negociacao> = [];
+    private negociacoes: Negociacao[] = []; //Fazer Negociacao[] é a mesma coisa que Array<Negociacao>, É um atalho que o TypeScript oferece para escrevermos menos.
 
     adiciona(negociacao: Negociacao) {
         this.negociacoes.push(negociacao);
