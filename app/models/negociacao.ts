@@ -8,7 +8,7 @@ export class Negociacao{
 
     
     public get Data() : Date {
-        const data = new Date(this._data.getTime()) //Aqui recriamos o "get Data" só que ultimlizamos o getTime() para evitar que alguém consiga modificar a data ultilizando o setDate(x) lá no nosso controller.
+        const data = new Date(this._data.getTime()) //Aqui recriamos o "get Data" só que ultilizamos o getTime() para evitar que alguém consiga modificar a data ultilizando o setDate(x) lá no nosso controller.
         return data; 
     }
      
