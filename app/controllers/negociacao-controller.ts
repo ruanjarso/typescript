@@ -1,5 +1,6 @@
 import { Negociacao } from "../models/negociacao.js";
 import { Negociacoes } from "../models/negociacoes.js";
+import { NegociaçõesView } from "../views/negociações-view.js";
 
 export class NegociacaoController {
 
@@ -7,17 +8,19 @@ export class NegociacaoController {
     private inputQuantidade: HTMLInputElement; //  |    resolvemos colocar esses atributos com o tipo 
     private inputValor: HTMLInputElement; //       |    "HTMLInputElement".
     private negociacoes: Negociacoes = new Negociacoes();
+    private negociacoesView = new NegociaçõesView('#negociacoesView')
 
     constructor() {
         this.inputData = document.querySelector("#data")
         this.inputQuantidade = document.querySelector("#quantidade")
         this.inputValor = document.querySelector("#valor")
+        this.negociacoesView.update(this.negociacoes)
     }
 
     adiciona(): void{
         const negociacao =  this.criaNegociacao();
         this.negociacoes.adiciona(negociacao);
-        console.log(this.negociacoes.lista());
+        this.negociacoesView.update(this.negociacoes)
         this.limparFormulario();
     }
     
